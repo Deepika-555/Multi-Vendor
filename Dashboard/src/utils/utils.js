@@ -13,8 +13,8 @@ const mode = 'development' // Set to 'production'
 let app_url, api_url
 
 if (mode === "production") {
-    // app_url = "https://multi-vendor-dashboard-psi.vercel.app"
-    // api_url = "https://multi-vendor-backend-l3yd.onrender.com"
+    app_url = "https://multi-vendor-dashboard-seven.vercel.app"
+    api_url = "https://multi-vendor-5z5y.onrender.com"
 } else {
     app_url = 'http://localhost:3001'
     api_url = 'http://localhost:5000'
