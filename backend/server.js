@@ -18,14 +18,16 @@ const server = http.createServer(app)
 
 app.use(cors({
 origin: mode === 'production'
-  ? ['http://multi-vendor-lake.vercel.app', process.env.USER_PANEL_PRODUCTION_URL, process.env.ADMIN_PANEL_PRODUCTION_URL]
+  ? ['https://multi-vendor-lake.vercel.app/', process.env.USER_PANEL_PRODUCTION_URL, process.env.ADMIN_PANEL_PRODUCTION_URL]
   : ['http://localhost:3000', 'http://localhost:3001'],
+  methods: ["GET", "POST"],
     credentials: true
 }))
 
 const io = socket(server, {
     cors: {
-        origin: mode === 'production' ? ['http://multi-vendor-lake.vercel.app' , process.env.user_panel_production_url, process.env.admin_panel_production_url] : ['http://localhost:3000', 'http://localhost:3001'],
+        origin: mode === 'production' ? ['https://multi-vendor-lake.vercel.app/' , process.env.user_panel_production_url, process.env.admin_panel_production_url] : ['http://localhost:3000', 'http://localhost:3001'],
+        methods: ["GET", "POST"],
         credentials: true
     }
 })
