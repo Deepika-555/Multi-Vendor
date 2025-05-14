@@ -12,12 +12,14 @@ require('dotenv').config()
 
 const socket = require('socket.io')
 
-const mode = process.env.mode
+const mode = process.env.MODE;
 
 const server = http.createServer(app)
 
 app.use(cors({
-    origin: mode === 'production' ? ['http://multi-vendor-lake.vercel.app', process.env.user_panel_production_url, process.env.admin_panel_production_url] : ['http://localhost:3000', 'http://localhost:3001'],
+origin: mode === 'production'
+  ? ['http://multi-vendor-lake.vercel.app', process.env.USER_PANEL_PRODUCTION_URL, process.env.ADMIN_PANEL_PRODUCTION_URL]
+  : ['http://localhost:3000', 'http://localhost:3001'],
     credentials: true
 }))
 
@@ -162,6 +164,7 @@ app.use('/api', require('./routes/dashboard/categoryRoutes'))
 app.use('/api', require('./routes/dashboard/productRoutes'))
 app.get('/', (req, res) => res.send('Hello World!'))
 
-const port = process.env.PORT
+const port = process.env.PORT || 5000;
+
 dbConnect()
 server.listen(port, () => console.log(`Server is running on port ${port}!`))
