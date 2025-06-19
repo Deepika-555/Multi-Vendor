@@ -67,7 +67,7 @@ Payment confirmation and order creation are tightly linked
 
 Stripe webhooks ensure real-time payment status synchronization
 
-🛠 Tech Stack:
+ Tech Stack:
 Frontend: React.js, React Router, Axios
 
 Backend: Node.js, Express.js
