@@ -1,7 +1,7 @@
 const stripe_sky = 'pk_test_51Nk8Y4F0B89ncn3xWB6ZN3GsbVIVL7Jqfa3jxtIOpPkKHcleHZw4EMPJKd4cRwm34ZARBeYmAWwu3VxyYL1gb6OT00UKNSvfvb'
 
-// Set mode to 'production'
-const mode = 'production'
+// Use environment variable or NODE_ENV for mode
+const mode = process.env.REACT_APP_MODE || process.env.NODE_ENV || 'development'
 
 let app_url, api_url
 
@@ -16,5 +16,6 @@ if (mode === "production") {
 export {
     app_url,
     api_url,
-    stripe_sky
+    stripe_sky,
+    mode
 }

@@ -8,7 +8,8 @@ const overrideStyle = {
     alignItems: "center"
 }
 
-const mode = 'development' // Set to 'production'
+// Use environment variable or NODE_ENV for mode
+const mode = process.env.REACT_APP_MODE || process.env.NODE_ENV || 'development'
 
 let app_url, api_url
 
@@ -26,5 +27,6 @@ export {
     socket,
     app_url,
     api_url,
-    overrideStyle
+    overrideStyle,
+    mode
 }
